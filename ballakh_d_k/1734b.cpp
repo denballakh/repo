@@ -1,5 +1,3 @@
-// https://codeforces.com/problemset/problem/1734/B
-
 #include <stdio.h>
 
 int main() {

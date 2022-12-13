@@ -1,5 +1,3 @@
-// https://codeforces.com/problemset/problem/136/b
-
 #include <stdio.h>
 
 #define MAX3DIGITS 19

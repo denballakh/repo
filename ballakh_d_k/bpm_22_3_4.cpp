@@ -50,21 +50,27 @@ Matrix sub(Matrix m1, Matrix m2) {
 
 void _main() {
     Matrix e = {1, 0, 0, 1};
-    Matrix m = {0, 0, 0, 0};
+
     double eps = 1.0/0.0;
-    int n = -1;
-
     scanf("%lf", &eps);
+
+    int n = -1;
     scanf("%d", &n);
-    scanf("%lf %lf %lf %lf", &m.a, &m.b, &m.c, &m.d);
 
-    Matrix a = m;
+    Matrix a;
+    scanf("%lf %lf %lf %lf", &a.a, &a.b, &a.c, &a.d);
 
+
+    Matrix m = e;
     print_matrix(m);
 
     for (int i = 1; i < n; i += 1) {
         m = mul(m, sub(add(e, e), mul(a, m)));
         print_matrix(m);
+        printf("det = %lf\n", det(m));
+
+        if (abs(det(m) - 1) <= eps)
+            break;
     }
 
 
